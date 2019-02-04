@@ -1,4 +1,4 @@
-export const DB_URL = 'mongodb://127.0.0.1:27017/inteliment';
+export const DB_URL = 'mongodb://127.0.0.1:27017/mytestdb';
 export const SECRET = 'app_super_secret';
 export const github = {
     client_id: 'dd3c286cfdef5ff18af8',

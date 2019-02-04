@@ -11,6 +11,8 @@ authRouter.get('/authenticate', (req, res, next) => {
 	res.send({ url: githubAuthUrl });
 });
 
+
+
 authRouter.get('/authenticate/callback', (req, res, next) => {
 	const { query } = req;
 	const { code } = query;

@@ -5,6 +5,8 @@ import mongoose from 'mongoose';
 import UserModel from './model';
 import authRouter from './route/auth';
 import userRouter from './route/user';
+//import loginRouter from './route/login';
+
 import './config/db';
 
 const app = express();
@@ -20,7 +22,15 @@ app.use((req, res, next) => {
 });
 
 app.use('/auth', authRouter);
+//app.use('/login', loginRouter);
 app.use('/user', userRouter);
+
+require('./route/login.js')(app);
+
+// define a simple route
+app.get('/', (req, res) => {
+  res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+});
 
 app.listen(3005, function() {
   console.log("Listening on port 3005");
